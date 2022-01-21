@@ -7,7 +7,7 @@ import org.koin.dsl.module
 val myModules = module {
 
     single{
-        ApiService
+        ApiService.getInstanceApiService("https://api.themoviedb.org/3/")
     }
 
 }

@@ -1,14 +1,12 @@
 package com.compass.poc.samflix.remote
 
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
+import com.compass.poc.samflix.model.*
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import java.net.URL
 
 interface ApiService {
 
@@ -16,41 +14,41 @@ interface ApiService {
     suspend fun getTopMovies(
         @Query("api_key")apiKey:String,
         @Query("language")language:String
-    ):Response<Any>
+    ):Response<TopMoviesResponse>
 
     @GET("genre/movie/list")
     suspend fun getGenreMovies(
         @Query("api_key")apiKey:String,
         @Query("language")language:String
-    ):Response<Any>
+    ):Response<GenreMoviesResponse>
 
     @GET("movie/{movie_id}")
     suspend fun getDetailsMovie(
         @Path("movie_id")movieId: String,
         @Query("api_key")apiKey:String,
         @Query("language")language:String
-    ):Response<Any>
+    ):Response<DetailsMovieResponse>
 
     @GET("movie/{movie_id}/recommendations")
     suspend fun getRecomendMovies(
         @Path("movie_id")movieId: String,
         @Query("api_key")apiKey:String,
         @Query("language")language:String
-    ):Response<Any>
+    ):Response<RecomendMoviesResponse>
 
     @GET("movie/{movie_id}/credits")
     suspend fun getCreditMovie(
         @Path("movie_id")movieId: String,
         @Query("api_key")apiKey:String,
         @Query("language")language:String
-    ):Response<Any>
+    ):Response<CreditsMovieResponse>
 
     @GET("movie/{movie_id}/reviews")
     suspend fun getReviewsMovie(
         @Path("movie_id")movieId: String,
         @Query("api_key")apiKey:String,
         @Query("language")language:String
-    ):Response<Any>
+    ):Response<ReviewsMovieResponse>
 
     companion object {
         fun getInstanceApiService(baseURL: String): ApiService {
