@@ -3,37 +3,29 @@ package com.compass.poc.samflix.model
 import com.google.gson.annotations.SerializedName
 
 data class ReviewsMovieResponse(
-    val id: Int,
-    val cast: List<Cast>,
-    val crew: List<Crew>){
 
-    data class Cast(
-        val adult: Boolean,
-        val gender: Int?,
-        val id: Int?,
-        @SerializedName("known_for_department") val knownForDepartment: String,
-        val name: Boolean,
-        @SerializedName("original_name") val originalName: String,
-        val popularity: Double,
-        @SerializedName("profile_path") val profilePath: String,
-        @SerializedName("cast_id") val castId: String,
-        val character: String,
-        @SerializedName("credit_id") val creditId: String,
-        val order: Int
+    val id: Int,
+    val page: Int,
+    val results:List<Results>,
+    @SerializedName("total_pages") val totalPages:Int,
+    @SerializedName("total_results") val totalResults:Int,
+){
+    data class Results(
+        val author:String,
+        @SerializedName("author_details") val authorDetails: List<AuthorDetails>,
+        val content: String,
+        @SerializedName("created_at") val createdAt:String,
+        val id: String,
+        @SerializedName("updated_at") val updatedAt:String,
+        val url: String
+
     )
 
-    data class Crew(
-        val adult: Boolean,
-        val gender: Int,
-        val id: Int,
-        @SerializedName("known_for_department") val knownForDepartment: String,
+    data class AuthorDetails(
         val name: String,
-        @SerializedName("original_name") val originalName: String,
-        val popularity: Double,
-        @SerializedName("profile_path") val profilePath: String,
-        @SerializedName("credit_id") val creditId: String,
-        val dapartament: String,
-        val job: String
+        val username: String,
+        @SerializedName("avatar_path") val avatarPath:String?,
+        val rating: Int?
     )
 
 
