@@ -1,9 +1,9 @@
 package com.compass.poc.samflix.model
 
 data class GenreMoviesResponse(
-    val genres: List<Genres>
+    val genres: List<GenreId>
 ) {
-    data class Genres(
+    data class GenreId(
         val id: Int,
         val name: String
     )

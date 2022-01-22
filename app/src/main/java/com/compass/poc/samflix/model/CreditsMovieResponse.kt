@@ -2,17 +2,17 @@ package com.compass.poc.samflix.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CreditsMovieResponse(
+class CreditsMovieResponse(
     val id: Int,
     val cast: List<Cast>,
-    val crew: List<Crew>){
-
+    val crew: List<Crew>
+) {
     data class Cast(
         val adult: Boolean,
-        val gender: Int?,
-        val id: Int?,
+        val gender: Int,
+        val id: Int,
         @SerializedName("known_for_department") val knownForDepartment: String,
-        val name: Boolean,
+        val name: String,
         @SerializedName("original_name") val originalName: String,
         val popularity: Double,
         @SerializedName("profile_path") val profilePath: String,
