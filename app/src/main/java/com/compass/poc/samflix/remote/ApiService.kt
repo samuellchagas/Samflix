@@ -58,8 +58,8 @@ interface ApiService {
                 .create(ApiService::class.java)
         }
 
-        private const val API_KEY = "76f8c50946ae21b6a15ed98a60e76d53"
-        private const val LANGUAGE = "pt-BR"
+        const val API_KEY = "76f8c50946ae21b6a15ed98a60e76d53"
+        const val LANGUAGE = "pt-BR"
     }
 
 }
