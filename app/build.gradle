@@ -49,8 +49,8 @@ dependencies {
     implementation "io.insert-koin:koin-android:3.1.4"
 
     //retrofit - chamadas a api
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //lifecycle - viewmodel e livedata
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
