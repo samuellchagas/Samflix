@@ -29,27 +29,6 @@ interface ApiService {
         @Query("language")language:String
     ):Response<DetailsMovieResponse>
 
-    @GET("movie/{movie_id}/recommendations")
-    suspend fun getRecomendMovies(
-        @Path("movie_id")movieId: String,
-        @Query("api_key")apiKey:String,
-        @Query("language")language:String
-    ):Response<RecomendMoviesResponse>
-
-    @GET("movie/{movie_id}/credits")
-    suspend fun getCreditMovie(
-        @Path("movie_id")movieId: String,
-        @Query("api_key")apiKey:String,
-        @Query("language")language:String
-    ):Response<CreditsMovieResponse>
-
-    @GET("movie/{movie_id}/reviews")
-    suspend fun getReviewsMovie(
-        @Path("movie_id")movieId: String,
-        @Query("api_key")apiKey:String,
-        @Query("language")language:String
-    ):Response<ReviewsMovieResponse>
-
     companion object {
         fun getInstanceApiService(baseURL: String): ApiService {
             return Retrofit.Builder().baseUrl(baseURL)

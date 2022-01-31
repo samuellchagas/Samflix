@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.compass.poc.samflix.databinding.FragmentHomeBinding
 import com.compass.poc.samflix.model.MovieItemAdapter
 import com.compass.poc.samflix.presentation.home.HomeViewModel
@@ -49,7 +50,11 @@ class HomeFragment : Fragment(), HomeMovieLinearAdapter.HomeMovieClickListener {
     }
 
     override fun movieClickedListener(data: MovieItemAdapter) {
-        Toast.makeText(requireContext(), "clicou em um filme", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToInfoMovieFragment(
+                movieId = data.id
+            )
+        )
     }
 
 }

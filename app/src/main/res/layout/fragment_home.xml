@@ -6,33 +6,43 @@
     android:layout_height="match_parent"
     android:background="@color/gray">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/home_toobar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Home"
-        app:titleMarginStart="40dp"
-        app:titleTextColor="@color/red" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_movies"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="28dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_toobar"
+        app:layout_constraintTop_toTopOf="@+id/home_toobar"
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="10"
         tools:listitem="@layout/item_movie_home" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toobar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_toobar_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleMarginStart="40dp"
+        app:titleTextColor="@color/red" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="98dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_toobar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
